@@ -1,0 +1,48 @@
+(* Grammaire v1 du mini-langage Akwaba                          *)
+(* USJ Abidjan - L3 Informatique - Principes de la compilation  *)
+(* Notation EBNF : | = ou, [ ] = facultatif, { } = repete,      *)
+(* , = suite, ; = fin de regle                                  *)
+(* Terminaux : mots entre guillemets, IDENT et NOMBRE           *)
+
+(* ---------- Instructions (R1 et R5) ---------- *)
+
+programme     = { instruction } ;
+
+instruction   = declaration | affectation | si | tantque | affichage ;
+
+bloc          = "{" , { instruction } , "}" ;
+
+declaration   = type , IDENT , [ "=" , expression ] , ";" ;
+
+type          = "entier" | "booleen" ;
+
+affectation   = IDENT , "=" , expression , ";" ;
+
+si            = "si" , "(" , expression , ")" , bloc , [ "sinon" , bloc ] ;
+
+tantque       = "tantque" , "(" , expression , ")" , bloc ;
+
+affichage     = "afficher" , "(" , expression , ")" , ";" ;
+
+(* ---------- Expressions (R3 et R4) ---------- *)
+(* Une regle par niveau de priorite, du plus faible au plus fort. *)
+(* Pas de recursivite a gauche : les repetitions { } donnent une  *)
+(* evaluation de gauche a droite.                                 *)
+
+expression    = ou ;
+
+ou            = et , { "ou" , et } ;
+
+et            = egalite , { "et" , egalite } ;
+
+egalite       = comparaison , { ( "==" | "!=" ) , comparaison } ;
+
+comparaison   = additive , { ( "<" | "<=" | ">" | ">=" ) , additive } ;
+
+additive      = multiplicatif , { ( "+" | "-" ) , multiplicatif } ;
+
+multiplicatif = unaire , { ( "*" | "/" | "%" ) , unaire } ;
+
+unaire        = ( "non" | "-" ) , unaire | primaire ;
+
+primaire      = NOMBRE | "vrai" | "faux" | IDENT | "(" , expression , ")" ;

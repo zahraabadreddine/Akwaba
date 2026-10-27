@@ -1,0 +1,8 @@
+// Calcule 2 puissance 10 (resultat attendu : 1024)
+entier p = 1;
+entier n = 0;
+tantque (n < 10) {
+  p = p * 2;
+  n = n + 1;
+}
+afficher(p);

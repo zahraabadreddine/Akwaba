@@ -1,0 +1,8 @@
+// Dit si un nombre est pair (resultat attendu : vrai)
+entier nb = 14;
+booleen pair = nb % 2 == 0;
+si (pair) {
+  afficher(vrai);
+} sinon {
+  afficher(faux);
+}

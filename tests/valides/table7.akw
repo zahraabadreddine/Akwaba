@@ -1,0 +1,6 @@
+// Affiche la table de 7 (7, 14, ..., 70)
+entier i = 1;
+tantque (i <= 10) {
+  afficher(7 * i);
+  i = i + 1;
+}

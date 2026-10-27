@@ -1,0 +1,6 @@
+// ERREUR ATTENDUE : erreur syntaxique ligne 5
+// La regle affichage exige un ";" apres la parenthese fermante.
+entier x = 4;
+si (x > 0) {
+  afficher(x)
+}

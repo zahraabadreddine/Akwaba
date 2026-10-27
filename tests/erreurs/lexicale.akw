@@ -1,0 +1,4 @@
+// ERREUR ATTENDUE : erreur lexicale ligne 3
+// Le caractere @ n'appartient a aucune famille de tokens d'Akwaba.
+entier a = 5 @ 2;
+afficher(a);
