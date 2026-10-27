@@ -10,9 +10,9 @@ USJ Abidjan • L3 Informatique • Principes de la compilation • 2026-2027
 
 | Nom et prénoms | Matricule | Rôle principal |
 |---|---|---|
-| BADREDDINE Zahraa | à compléter | Grammaire |
-| à compléter | à compléter | Lexer |
-| à compléter | à compléter | Tests et documentation |
+| BADREDDINE Zahraa | 250004 | Grammaire |
+| Zreik Fatima |  250020 | Lexer |
+
 
 Les rôles changeront au cours du semestre. Tout le monde doit pouvoir expliquer tout le code à la soutenance.
 
